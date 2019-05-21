@@ -14,28 +14,18 @@
     <div id="app">
         <p>{{ message }}</p>
         <button v-on:click="reverseMessage">Reverse Message</button>
-        <button id="init" onclick="init()">init</button>
      </div>
     <script>
 
-        var init = function() {
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-              }).catch(function(err) {
-                console.log('ServiceWorker registration failed: ', err);
-              });
-            }
-        }
 
       <!-- service workerの登録関係 -->
-        // if ('serviceWorker' in navigator) {
-        //   navigator.serviceWorker.register('/service_worker.js').then(function(registration) {
-        //       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        //   }).catch(function(err) {
-        //     console.log('ServiceWorker registration failed: ', err);
-        //   });
-        // }
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        }
 
         <!-- vue.jsの設定関係 -->
         var app = new Vue({
