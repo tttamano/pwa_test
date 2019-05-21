@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <title>tableCell&borderBox</title>
+  <style>
+  body{
+    box-sizing: border-box;
+  }
+  .wrapper{
+    display: table;
+    width: 100vw;
+  }
+  /* .rows{
+    display: table-row;
+  } */
+  .contents{
+    display: table-cell;
+    height: 250px;
+  }
+  #t1c1{
+    width: auto;
+    background-color: #ffddcc;
+  }
+  #t1c2{
+    width: 200px;
+    background-color: #ddccff;
+  }
+  #t1c3{
+    width: auto;
+    background-color: #ccffdd;
+  }
+  #t2c1{
+    width: 150px;
+    background-color: #ffccdd;
+  }
+  #t2c2{
+    width: 350px;
+    background-color: #ccddff;
+  }
+  #t2c3{
+    width: autopx;
+    background-color: #ddffcc;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper" id="t1">
+    <div class="contents" id="t1c1"></div>
+    <div class="contents" id="t1c2"></div>
+    <div class="contents" id="t1c3"></div>
+  </div>
+  <div class="wrapper" id="t2">
+    <div class="contents" id="t2c1"></div>
+    <div class="contents" id="t2c2"></div>
+    <div class="contents" id="t2c3"></div>
+  </div>
+</body>
+</html>
