@@ -14,7 +14,7 @@
   <div id="app">
       <p>{{ message }}</p>
       <button v-on:click="reverseMessage">Reverse Message</button>
-   </div>
+  </div>
   <script>
     <!-- service workerの登録関係 -->
       if ('serviceWorker' in navigator) {
@@ -29,7 +29,7 @@
       var app = new Vue({
         el: '#app',
         data: {
-          message: 'Hello Vue!'
+        message: 'Hello Vue!'
         },
         methods: {
           reverseMessage: function () {
@@ -37,6 +37,19 @@
           }
         }
       });
+
+      navigator.geolocation.getCurrentPosition(foundLocation, noLocation);
+
+       function foundLocation(position)
+       {
+         var lat = position.coords.latitude;
+         var long = position.coords.longitude;
+         alert('Found location: ' + lat + ', ' + long);
+       }
+       function noLocation()
+       {
+         alert('Could not find location');
+       }
   </script>
 </body>
 </html>
