@@ -16,8 +16,6 @@
       <button v-on:click="reverseMessage">Reverse Message</button>
    </div>
   <script>
-
-
     <!-- service workerの登録関係 -->
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js').then(function(registration) {
@@ -39,8 +37,6 @@
           }
         }
       });
-
   </script>
 </body>
-
 </html>
