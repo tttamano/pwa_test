@@ -10,8 +10,8 @@ self.addEventListener('install', function(event) {
         caches
             .open(CACHE_NAME)
             .then(function(cache) {
-              // return cache.addAll(urlsToCache);
-              return cache.addAll(urlsToCache.map(url => new Request(url, {credentials: 'same-origin'})));
+              eturn cache.addAll(urlsToCache);
+              // return cache.addAll(urlsToCache.map(url => new Request(url, {credentials: 'same-origin'})));
             })
     );
 });
