@@ -1,7 +1,9 @@
+<!-- index.html -->
 <html>
-  <head>
+
+<head>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- <script src="service-worker.js"></script> -->
+    <!-- manifest.jsonを呼び出しています -->
     <link rel="manifest" href="./manifest.json">
     <script>
         // service workerが有効なら、service-worker.js を登録します
@@ -9,38 +11,24 @@
             navigator.serviceWorker.register('./service-worker.js').then(function () { console.log('Service Worker Registered'); });
         }
     </script>
-    <title>PWA Sample</title>
-  </head>
-  <body>
+    <title>Hello PWA.</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <h1>Hello PWA.</h1>
     <div id="app">
         <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
-     </div>
+    </div>
     <script>
-
-      <!-- service workerの登録関係 -->
-        // if ('serviceWorker' in navigator) {
-        //   navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-        //     console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        //   }
-        //   ).catch(function(err) {
-        //     console.log('ServiceWorker registration failed: ', err);
-        //   });
-        // }
-
-        <!-- vue.jsの設定関係 -->
         var app = new Vue({
-          el: '#app',
-          data: {
-            message: 'Hello Vue!'
-          },
-          methods: {
-            reverseMessage: function () {
-              this.message = this.message.split('').reverse().join('')
+            el: '#app',
+            data: {
+                message: 'Hello Syado!'
             }
-          }
         });
-
     </script>
-  </body>
+</body>
+
 </html>
