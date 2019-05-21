@@ -14,11 +14,11 @@
     <div id="app">
         <p>{{ message }}</p>
         <button v-on:click="reverseMessage">Reverse Message</button>
-        <button id="init">init</button>
+        <button id="init" onclick="init()">init</button>
      </div>
     <script>
 
-        $('#init').on('click', function() {
+        var init = function() {
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.register('/service_worker.js').then(function(registration) {
                   console.log('ServiceWorker registration successful with scope: ', registration.scope);
