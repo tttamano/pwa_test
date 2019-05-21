@@ -4,7 +4,7 @@ var urlsToCache = [
     '/tttamano.github.io/pwa_test/',
 ];
 
-インストール処理
+//インストール処理
 self.addEventListener('install', function(event) {
     event.waitUntil(
         caches
